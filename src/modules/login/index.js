@@ -19,7 +19,7 @@ class Login extends Component {
         this.initBG();
       }
     
-      initBG() {
+    initBG() {
         // 注入动画
         const config = {
           color: '0,0,0',
@@ -33,9 +33,8 @@ class Login extends Component {
         this.setState({
           backGround: cn
         })
-      }
-
-
+    }
+    
     //提交表单
     handleSubmit = (e)=>{
         e.preventDefault();

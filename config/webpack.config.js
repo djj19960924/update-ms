@@ -328,6 +328,10 @@ module.exports = function(webpackEnv) {
         '@pages':path.resolve("src/pages"),
         '@img':path.resolve("src/utils/img"),
         '@js':path.resolve("src/utils/js"),
+        '@less':path.resolve("src/assets/less"),
+        '@css':path.resolve("src/assets/css"),
+        '@config':path.resolve("src/config"),
+        '@modules':path.resolve("src/modules"),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
