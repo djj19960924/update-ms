@@ -12,6 +12,8 @@ import Home from '@modules/home';
     // 权限列表
     import permissions from '@modules/users/permissions';
 
+import tests from '@modules/test/tests';
+
 import menus from '@config/menuConfig'
 
 const componentsList = {
@@ -19,8 +21,8 @@ const componentsList = {
     roles,
     accounts,
     permissions,
+    tests
 }
-
 class ContentMain extends Component {
     constructor(props) {
         super(props);
@@ -52,25 +54,22 @@ class ContentMain extends Component {
     getNewRoutesList() {
         const dataList = [];
         const {menusList} = this.state;
-        
         for(let obj of menusList){
-            console.log(obj)
             for (let obj1 of obj.components) dataList.push(<Route exact path={obj1.path} component={componentsList[obj1.name]}
                 key={obj1.path}/>);
         }
         // 不直接使用 setState, 是因为该方法会在组件卸载时重复渲染, 造成内存负载, 会导致 react 报错
         // this.setState({routesList: dataList})
         this.state.routesList = dataList;
-        console.log('routesList1:',this.state.routesList)
     }
-
+    
     render() { 
         const { routesList } = this.state;
         return ( 
             <div style={{backgroundColor: '#eee', width: '100%', height: '100%', padding: '10px'}}>
                 <Switch>
-                    {/*放置循环路由*/}
-                    {routesList}
+                    {/*放置循环路由,放进去是一个数组,react会自动遍历里面的元素*/}
+                    { routesList }
                 </Switch>  
             </div>
         );

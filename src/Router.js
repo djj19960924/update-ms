@@ -17,7 +17,7 @@ class BasicRoute extends Component {
         <Switch>
             <Route exact path='/login' component={Login} />
             <Route exact path='/forgotPassWord' component={ForgotPassWord} />
-            <Route exact path='/' component={Admin} />
+            <Route path='/' component={Admin} />
         </Switch>
     );
   }

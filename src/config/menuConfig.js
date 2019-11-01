@@ -2,6 +2,7 @@ const menus = [
     {
         title: '首页',
         key:'/',
+        icon: 'home',
         components: [
             {name:'Home',path:'/'}
         ]
@@ -35,6 +36,21 @@ const menus = [
                   {name: 'accounts', path: '/users/accounts'}
                 ]
               },
+        ]
+    },
+    {
+        title:'测试文件',
+        icon:'test',
+        key:'/test',
+        subs:[
+            {
+                title:'测试',
+                icon: 'lock',
+                key: '/test/tests',
+                components:[
+                    {name: 'tests', path: '/test/tests'}
+                ]
+            }
         ]
     }
 ]
